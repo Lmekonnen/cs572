@@ -1,5 +1,5 @@
 const express=require("express");
-
+const path=require("path")
 const app=express();
 app.set("port",3000);
 app.get("/",function(req,res){
@@ -13,7 +13,6 @@ app.get("/json",function(req,res){
 });
 app.get("/file",function(req,res){
     console.log("file recieved");
-    //
     console.log(__dirname);
     console.log("app11.js");
     // if()

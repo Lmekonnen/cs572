@@ -8,7 +8,7 @@ const app=express()
 app.set("port",5353)
 
 app.use(function(req,res,next){
-    console.log(req.methos,req.url)
+    console.log(req.method,req.url)
     next()
 })
 app.use(express.static(path.join(__dirname,"public")))

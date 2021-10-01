@@ -19,4 +19,3 @@ const server= app.listen(app.get("port"), function() {  //setting up a server
    
     console.log("listening to port"+server.address().port)
 });
-module.exports=router;
