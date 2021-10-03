@@ -1,7 +1,7 @@
 //connect to mongo db using mongoose
 //we wanna know when are we connected
-const { LoggerLevel } = require("mongodb")
 const mongoose=require("mongoose")
+require("./games-model.js");
 const dbName="newTestDB"
 const dburl="mongodb://localhost:27017/"+dbName
 mongoose.connect(dburl)
@@ -12,7 +12,7 @@ mongoose.connection.on("disconnected",function(){
     console.log("Mongoose disconnected to");
 })
 mongoose.connection.on("error",function(err){
-    console.log("Mongoose errror",err);
+    console.log("Mongoose errror"+err);
 })
 process.on("SIGINT",function(){
     mongoose.connection.close(function(){
@@ -20,9 +20,15 @@ process.on("SIGINT",function(){
         process.exit(0)
     })
 })
+process.on("SIGTERM", function() { 
+    mongoose.connection.close(function() { 
+        console.log("Mongoose disconnected by app termination"); 
+        process.exit(0);
+}); 
 process.on("SIGUSR2",function(){
     mongoose.connection.close(function(){
         console.log("Mongoose dicoonected by app restart");
         process.kill(process.pid,"SIGUSR2")
     })
-})
+});
+});

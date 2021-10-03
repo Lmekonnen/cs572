@@ -20,3 +20,4 @@ const gameSchema=new mongoose.Schema({
         publisher:publisherSchema
 });
 mongoose.model("Game",gameSchema,"games")  //cmpiling the model means setting hashmap set
+
