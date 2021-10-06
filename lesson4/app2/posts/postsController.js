@@ -1,11 +1,10 @@
-angular.module("myApp").controller("postsController",postsController)
+angular.module("myApp").controller("postsController", postsController)
 
-function postsController(postFactory,$routeParams){
-    const vm=this;
-    // const postId=$routeParams.postId;
+function postsController(postFactory) {
+    const vm = this;
     postFactory.getTenPosts()
-    .then(function (response) {
-        console.log(response);
-        vm.posts=response.data;
-    })
+        .then(function (response) {
+            console.log(response);
+            vm.posts = response.data;
+        })
 }
