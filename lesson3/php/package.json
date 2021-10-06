@@ -1,0 +1,22 @@
+{
+  "name": "php_lidia",
+  "version": "1.0.0",
+  "description": "This is a node based personal hobby project",
+  "main": "phpApp.js",
+  "scripts": {
+    "start": "node phpApp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "mongoose",
+    "mongodb",
+    "express"
+  ],
+  "author": "Lidia Mekonen",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8"
+  }
+}

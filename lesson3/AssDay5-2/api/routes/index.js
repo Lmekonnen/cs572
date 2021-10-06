@@ -1,10 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const gamesController = require("../controllers/games.controller");
+const studentController = require("../controllers/studentController");
+const courseController = require("../controllers/courseController");
 
-router.route("/games")
-.get(gamesController.gamesGetAll)
-// .post(gamesController.gamesGetOne);
-router.route("/games/:gameId")
-.get(gamesController.gamesGetOne);
+router.route("/students")
+.get(studentController.studentGetAll)
+
+router.route("/students/:studentId")
+.get(studentController.studentGetOne);
+
+router.route("/students/:studentId/courses")
+.get(courseController.getAllStuCourses)
+
+router.route("/students/:studentId/courses/:courseId")
+.get(courseController.getOneStuCourses)
+
 module.exports = router 

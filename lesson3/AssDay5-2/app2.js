@@ -1,8 +1,5 @@
-require("./api/data/dbConnection").open();
 const express = require("express");
-const path = require("path");
-require("./api/data/db")
-require("./api/data/dbConnection").open()
+require("./api/data/dbConnection")
 const route = require("./api/routes");
 
 const app = express();
@@ -13,10 +10,8 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use(express.static(path.join(__dirname,"public")));
-app.use(route);
+app.use("/api",route);
 
 var server = app.listen(app.get("port"),function(){
-    var port = server.address().port;
-    console.log("Listening to port "+port);
+    console.log("Listening to port "+server.address().port);
 });
