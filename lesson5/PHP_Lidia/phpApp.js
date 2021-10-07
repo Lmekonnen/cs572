@@ -1,11 +1,11 @@
-
+require("dotenv").config({"path":".env"})
 const express = require("express");
 const path = require("path");
 require("./api/data/dbConnection");
 const route = require("./api/routes");
 
 const app = express();
-app.set("port",3000);
+app.set("port",process.env.PORT);
 
 app.use("/node_modules",express.static(path.join(__dirname,"node_modules")));
 app.use(express.static(path.join(__dirname,"public")));
