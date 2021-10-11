@@ -1,0 +1,18 @@
+<h1>Information about trip: 
+    Bike ID {{vm.trip.bikeid}} </h1>
+
+<p>
+    Trip Duration:{{vm.trip.tripduration}}<br>
+    Start Station Name:{{vm.trip.startStationName}}<br>
+    End Station Name: {{vm.trip.experience}}<br>
+    User Type:{{vm.trip.usertype}}<br>
+    Birth Year: {{vm.trip.birthyear | date "MM-dd- yy (hh:mm"}}<br>
+    Start Time:{{vm.trip.starttime |date "MM-dd- yy (hh:mm"}}<br>
+    End Time: {{vm.trip.endtime |date "MM-dd- yy (hh:mm"}}<br>
+    Start Location:{{vm.trip.startlocation}} <br>
+    End Location:{{vm.trip.endlocation}}
+</p>
+
+<button><a ng-href="/#!/trips">previous page</a></button>
+
+   

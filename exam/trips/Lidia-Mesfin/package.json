@@ -1,0 +1,21 @@
+{
+  "name": "job",
+  "version": "1.0.0",
+  "description": "\"job searching\"",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.9",
+    "nodemon": "^2.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lidia",
+  "license": "ISC"
+}

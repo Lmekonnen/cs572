@@ -2,11 +2,11 @@ require("dotenv").config({"path":".env"})
 const MongoClient = require("mongodb").MongoClient;
 
 const dbName = "newTestDB";
-const dburl=process.env.dburl+dbName;
+const dbUrl=process.env.dbUrl+dbName;
 
 let _connection= null;
 const open = function(){
-    MongoClient.connect(dburl,function(err,client){
+    MongoClient.connect(dbUrl,function(err,client){
         if(err){
             console.log("DB connection failed");
             return

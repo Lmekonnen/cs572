@@ -1,9 +1,9 @@
-// require("dotenv").config({"path":".env"})
+require("dotenv").config({"path":".env"})
 const mongoose = require("mongoose");
 
 const dbName = "BooksDB";
-const dbUrl ="mongodb://localhost:27017/"+dbName;
-// const dburl=process.env.dburl+dbName;
+// const dbUrl ="mongodb://localhost:27017/"+dbName;
+const dbUrl=process.env.dbUrl+dbName;
 require("./books-model");
 
 mongoose.connect(dbUrl);

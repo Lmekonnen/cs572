@@ -1,0 +1,20 @@
+<h1>{{vm.title}}</h1>
+<button style="background-color: yellow" ng-click="vm.pre()">previous</button>
+<button style="background-color: yellow" ng-click="vm.next()">next</button>
+<ul>
+    <li ng-repeat="job in vm.jobs">
+        <a ng-href="/#!/jobs/{{job._id}}">{{job.title}}</a>
+        <button ng-click="vm.deleteJob(job._id)">Delete</button>
+    </li>
+</ul>
+<form name="vm.jobForm" ng-submit="vm.addJob()">
+    To add new job fill below requirement</br>
+    Title:<input type="text" name="title" required ng-model="vm.jobTitle" style="color:black"><br>
+    Salary:<input type="text" name="salary" required ng-model="vm.jobSalary" style="color:black"><br>
+    Description:<input type="text" name="description" required ng-model="vm.jobDescription" style="color:black"><br>
+    Experience:<input type="text" name="experience" required ng-model="vm.jobExperience" style="color:black"><br>
+    Skills:<input type="text" name="skills" required ng-model="vm.jobSkills" style="color:black"><br>
+    Post date:<input type="date" name="postDate" required ng-model="vm.jobPostDate" style="color:black"><br>
+    <button type="submit" class="btn-success">Add Game</button>
+       
+</form>
