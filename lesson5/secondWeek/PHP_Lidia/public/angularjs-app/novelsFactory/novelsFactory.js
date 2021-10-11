@@ -5,13 +5,18 @@ function NovelsFactory($http) {
         getOneNovel: getOneNovel,
         deleteOneNovel:deleteOneNovel,
         addOneNovel:addOneNovel,
-        updateOneNovel:updateOneNovel
+        updateOneNovel:updateOneNovel,
+        getPublishers:getPublishers,
+        addUser: addUser
     };
     function getAllNovels() {
         return $http.get("/api/books").then(complete).catch(failed);
     }
     function getOneNovel(bookID) {
         return $http.get("/api/books/" + bookID).then(complete).catch(failed);
+    }
+    function getPublishers(bookID) {
+        return $http.get("/api/books/" + bookID+"/publisher").then(complete).catch(failed);
     }
     function deleteOneNovel(bookID) {
         return $http.delete("/api/books/" +bookID).then(complete).catch(failed);
@@ -21,6 +26,9 @@ function NovelsFactory($http) {
     }
     function updateOneNovel(id,book) {
         return $http.put("/api/books/"+id,book).then(complete).catch(failed);
+    }
+    function addUser(newUser) {
+        return $http.post("/api/users",newUser).then(complete).catch(failed);
     }
     function complete(response) {
         return response.data;

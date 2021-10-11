@@ -8,7 +8,7 @@ function NovelsController(NovelsFactory){
             title: vm.novelTitle,
             author: vm.novelAuthor,
             genre:vm.novelGenre,
-            publisher: vm.novelPublishers,
+            // publisher: vm.novelPublishers,
         }
         if (vm.novelForm.$valid && vm.novelForm.$dirty) {
             NovelsFactory.addOneNovel(data).then(function (response) {

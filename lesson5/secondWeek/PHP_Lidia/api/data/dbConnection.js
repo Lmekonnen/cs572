@@ -5,6 +5,7 @@ const dbName = process.env.dbName;
 // const dbUrl ="mongodb://localhost:27017/"+dbName;
 const dburl=process.env.dbUrl+dbName;
 require("./books-model");
+require("./user-model")
 
 mongoose.connect(dburl);
 

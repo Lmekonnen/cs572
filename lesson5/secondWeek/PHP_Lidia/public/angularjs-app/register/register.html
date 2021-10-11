@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Novel Books</a>
@@ -16,9 +15,7 @@
           <li class="nav-item">
             <a class="nav-link" ng-href="/#!/books">Novels</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" ng-href="/#!/register">Register</a>
-          </li>
+          
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
@@ -30,11 +27,24 @@
             </div>
           </li> -->
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
-  <h1>Welcome to Lidia Novel Books</h1>
+  <form name="vm.userForm" ng-submit="vm.addUser()">
+    <fieldset style="margin-left: 15px;">
+        <legend>Form to register</legend>
+        <div class="form-group">
+            <label class="form-control-plaintext">Username</label>
+            <input type="text" name="username" size="21" placeholder="username" required ng-model="vm.username">
+        </div>
+        <div class="form-group">
+            <label class="form-control-plaintext">Password</label>
+            <input type="password" name="password" size="21" placeholder="password" required ng-model="vm.password">
+        </div>
+        <div class="form-group">
+            <label class="form-control-plaintext">Name</label>
+            <input type="text" name="name" size="21" placeholder="name" required ng-model="vm.name">
+        </div><br>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </fieldset>
+</form>

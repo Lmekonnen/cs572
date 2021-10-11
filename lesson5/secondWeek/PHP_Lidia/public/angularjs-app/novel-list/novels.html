@@ -28,7 +28,7 @@
           </li> -->
             </ul>
             <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <input class="form-control me-sm-2" type="text" placeholder="Search" ng-model="search">
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -45,11 +45,11 @@
             <th>Author</th>
             <th></th>
         </tr>
-        <tr class="table-active" ng-repeat="novel in vm.novels">
+        <tr class="table-active" ng-repeat="novel in vm.novels | filter:search">
             <td><a ng-href="/#!/books/{{novel._id}}">{{novel._id}}</a></td>
             <td><a ng-href="/#!/books/{{novel._id}}">{{novel.title}}</a></td>
             
-            <td><button ng-click="vm.deleteNovel(novel._id)">Delete</button></td>
+            <td><button class="btn-secondary" ng-click="vm.deleteNovel(novel._id)">Delete</button></td>
         </tr>
 
 
@@ -58,15 +58,15 @@
 <form name="vm.novelForm" ng-submit="vm.addNovel()">
     <div class="form-group">
         <fieldset>
-            <label class="form-label">To add new job fill below requirement:</label><br>
+            <label class="form-label"><h2>To add new job fill below requirement:</h2></label><br>
             Title:<input class="form-control" type="text" name="title" required ng-model="vm.novelTitle"
                 style="color:black"><br>
             Author:<input class="form-control" type="text" name="salary" required ng-model="vm.novelAuthor"
                 style="color:black"><br>
             Genre:<input class="form-control" type="text" name="genre" required ng-model="vm.novelGenre"
                 style="color:black"><br>
-            Publishers:<input class="form-control" type="text" name="description" required ng-model="vm.novelPublishers"
-                style="color:black"><br>
+            <!-- Publishers:<input class="form-control" type="text" name="description" required ng-model="vm.novelPublishers"
+                style="color:black"><br> -->
                 
 
             <button type="submit" class="btn-success">Add Novel</button><br>

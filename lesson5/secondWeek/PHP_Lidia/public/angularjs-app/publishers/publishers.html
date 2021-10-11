@@ -31,43 +31,22 @@
         </div>
     </div>
 </nav>
-<h1>Information about book:
-    {{vm.novel.title}}</h1>
+<h1>List of Publishers</h1>
 <table class="table table-hover">
-
     <thead>
         <tr class="table-active">
             <th scope="row">Author</th>
             <td> Title</td>
-         
-            <td>Genre</td>
+            <td>Publishers Name</td>
+            <td>Publishers Address</td>
         </tr>
-
-
     </thead>
     <tbody>
-        <tr class="table-active">
-            <th scope="row">{{vm.novel.author}}</th>
-            <td><a ng-href="/#!/books/{{vm.novel._id}}/publisher">{{vm.novel.title}}</a> </td>
-            <!-- <td>{{vm.novel.publishers}}</td> -->
-            <td>{{vm.novel.genre}}</td>
+        <tr class="table-active" ng-repeat="novel in vm.novels">
+            <th scope="row">{{novel.author}}</th>
+            <td><a ng-href="/#!/books/{{novel._id}}/publisher">{{novel.publisher._id}}</a> </td>
+            <td>{{novel.publishers.name}}</td>   
+            <td>{{novel.publishers.address}}</td>
         </tr>
     </tbody>
 </table>
-<form name="vm.novelForm" ng-submit="vm.updateNovel()">
-    <div class="form-group">
-        <fieldset>
-            <label class="form-label">To update Novel fill below requirement:</label><br>
-            Title:<input class="form-control" type="text" name="title" required ng-model="vm.novelTitle"
-                style="color:black"><br>
-            Author:<input class="form-control" type="text" name="author" required ng-model="vm.novelAuthor"
-                style="color:black"><br>
-            Genre:<input class="form-control" type="text" name="genre" required ng-model="vm.novelGenre"
-                style="color:black"><br>
-            <!-- Publishers:<input class="form-control" type="text" name="publishers" required ng-model="vm.novelPublishers"
-                style="color:black"><br> -->
-
-            <button type="submit" class="btn-success">Update Novel</button><br>
-        </fieldset>
-    </div>
-</form>

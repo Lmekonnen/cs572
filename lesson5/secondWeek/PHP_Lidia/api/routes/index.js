@@ -3,6 +3,7 @@ const router = express.Router();
 
 const bookController = require("../controllers/bookController");
 const publisherController = require("../controllers/publisherController")
+const userController = require("../controllers/users.controller")
 
 
 router.route("/books").get(bookController.getAllBooks)
@@ -20,5 +21,7 @@ router.route("/books/:bookID/publisher").get(publisherController.getAllPublisher
 router.route("/books/:bookID/publisher/:publisherId").get(publisherController.getOnePublisher)
     .put(publisherController.updatePublisher)
     .delete(publisherController.deletePublisher);
+
+router.route("/users").post(userController.addUser);
 
 module.exports = router;
