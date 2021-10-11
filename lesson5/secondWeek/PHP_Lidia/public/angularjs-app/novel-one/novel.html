@@ -1,10 +1,72 @@
-<h1>Information about book:
-    {{vm.novel.title}}</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Novel Books</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ng-href="/#!/books/{{novel._id}}">Novels</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li> -->
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <h1>Information about book:
+    {{vm.novel.title}}</h1>
+<table class="table table-hover">
+        
+    <thead>
+      <tr class="table-active">
+        <th scope="row">Author</th>
+        <td> Title</td>
+        <td>Publishers</td>
+        <td>Genre</td>
+      </tr>
+      
+     
+    </thead>
+    <tbody>
+        <tr class="table-active">
+          <th scope="row">{{vm.novel.author}}</th>
+          <td> {{vm.novel.title}}</td>
+          <td>{{vm.novel.publisher.name}}</td>
+          <td>{{vm.novel.genre}}</td>
+        </tr> 
+      </tbody>
+  </table>
+  <form name="vm.novelForm" ng-submit="vm.updateNovel()">
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label">To update Novel fill below requirement:</label><br>
+            Title:<input class="form-control" type="text" name="title" required ng-model="vm.novelTitle"
+                style="color:black"><br>
+            Author:<input class="form-control" type="text" name="author" required ng-model="vm.novelAuthor"
+                style="color:black"><br>
+            Genre:<input class="form-control" type="text" name="genre" required ng-model="vm.novelGenre"
+                style="color:black"><br>
+            Publishers:<input class="form-control" type="text" name="publishers" required ng-model="vm.novelPublishers"
+                style="color:black"><br>
 
-<p>
-    Author: {{vm.novel.author}}<BR />
-    Title: {{vm.novel.title}}
-    <!-- Price: {{vm.novel.price | currency}}<BR /> -->
-    <!-- Publisher: {{vm.novel.publisher.name}} -->
-</p>
+            <button type="submit" class="btn-success">Update Novel</button><br>
+        </fieldset>
+    </div>
+</form>

@@ -21,6 +21,9 @@ const bookSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    genre:{
+        type:String,
+        required:true},
     publishers: [publisherSchema]
 })
 

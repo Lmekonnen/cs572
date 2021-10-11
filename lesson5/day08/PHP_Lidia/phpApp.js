@@ -5,6 +5,11 @@ require("./api/data/dbConnection");
 const route = require("./api/routes");
 
 const app = express();
+if(isNaN(process.env.PORT)){
+    process.env.PORT = 6000;
+}
+process.env.PORT = process.env.PORT || 6000
+
 app.set("port",process.env.PORT);
 
 app.use("/node_modules",express.static(path.join(__dirname,"node_modules")));

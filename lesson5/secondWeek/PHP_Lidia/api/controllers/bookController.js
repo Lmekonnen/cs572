@@ -100,6 +100,7 @@ module.exports.updateOneBook = function (req, res) {
             else {
                 book.title = req.body.title;
                 book.author = req.body.author;
+                book.genre = req.body.genre
                 // book.publisher = req.body.publisher;
                 book.save(function(err,updatedBook){
                     if(err){

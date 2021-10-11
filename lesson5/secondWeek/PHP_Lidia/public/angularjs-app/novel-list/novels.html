@@ -1,7 +1,80 @@
-<h1>{{vm.title}}</h1>
-<ul>
-    <li ng-repeat="novel in vm.novels">
-        <a ng-href="/#!/books/{{novel._id}}">{{novel.title}}</a></li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Novel Books</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ng-href="/#!/books">Novels</a>
+                </li>
+                <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Separated link</a>
+            </div>
+          </li> -->
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<h1>{{vm.title}}</h1>
+<button style="background-color: yellow" ng-click="vm.pre()">previous</button>
+<button style="background-color: yellow" ng-click="vm.next()">next</button>
+<table class="table table-hover">
+
+    <tbody>
+        <tr>
+            <th scope="row">Author ID</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        <tr class="table-active" ng-repeat="novel in vm.novels">
+            <td><a ng-href="/#!/books/{{novel._id}}">{{novel._id}}</a></td>
+            <td><a ng-href="/#!/books/{{novel._id}}">{{novel.title}}</a></td>
+            
+            <td><button ng-click="vm.deleteNovel(novel._id)">Delete</button></td>
+        </tr>
+
+
+    </tbody>
+</table>
+<form name="vm.novelForm" ng-submit="vm.addNovel()">
+    <div class="form-group">
+        <fieldset>
+            <label class="form-label">To add new job fill below requirement:</label><br>
+            Title:<input class="form-control" type="text" name="title" required ng-model="vm.novelTitle"
+                style="color:black"><br>
+            Author:<input class="form-control" type="text" name="salary" required ng-model="vm.novelAuthor"
+                style="color:black"><br>
+            Genre:<input class="form-control" type="text" name="genre" required ng-model="vm.novelGenre"
+                style="color:black"><br>
+            Publishers:<input class="form-control" type="text" name="description" required ng-model="vm.novelPublishers"
+                style="color:black"><br>
+                
+
+            <button type="submit" class="btn-success">Add Novel</button><br>
+        </fieldset>
+    </div>
+</form>
+
+
+
+
+</form>
