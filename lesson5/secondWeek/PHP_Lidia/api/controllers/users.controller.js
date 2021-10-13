@@ -9,7 +9,7 @@
 //         console.log("create created", err);
 //         res.status(201).json(user)
 //     }
-//     CreateUsersUsingHashedPassword = function (err, hashPassword, req) {
+//     CreateUsersUsingHashedPassword = function (err, hashPassword, req,res) {
 //         if (err) {
 //             console.log("Bcrypt hash generation error", err);
 //             res.status(500).json(err);
@@ -19,10 +19,10 @@
 //                 password: hashPassword,
 //                 name: req.body.name
 //             }
-//             user.create(newUser, (err,res)=>sendUserCreateResult(err,res))
+//             user.create(newUser, (err,response)=>sendUserCreateResult(err,response,res))
 //         }
 //     }
-//     const createUserUsingHashAndSalt = function (err, salt, req) {
+//     const createUserUsingHashAndSalt = function (err, salt, req,res) {
 //         if (err) {
 //             console.log("Bcrypt salt generation error", err);
 //             res.status(500).json(err);
@@ -55,14 +55,16 @@ module.exports.addUser = function (req, res) {
                         password: hashPasswd,
                         name: req.body.name
                     }
+                    
                     users.create(newUser, function (err, users) {
+                        console.log(newUser);
                         if (err) {
                             console.log("Error creating name");
                         }
                         else {
                             console.log("user successfully added");
                             res.status(200).json(users)
-                        }
+                        } 
                     });
                 }
             });

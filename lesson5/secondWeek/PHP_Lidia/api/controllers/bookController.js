@@ -39,7 +39,7 @@ module.exports.getAllBooks = function (req, res) {
         return;
     }
     else {
-        books.find().skip(offset).limit(count).exec(function (err, books) {
+        books.find().skip(offset).limit(count).exec(function (err, books) {  //linking call back to an event
             if (err) {
                 console.log("Error finding books");
                 res.status(500).json({ "Message": "Error finding books" });
