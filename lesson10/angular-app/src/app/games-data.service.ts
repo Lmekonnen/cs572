@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Game } from './games-list/games-list.component';
+import { Game1 } from './game-one/game-one.component';
 
 
 
@@ -18,11 +19,11 @@ export class GamesDataService {
       .catch(this.handleError);
   }
   public getGame(gameId: string)
-  : Promise<Game[]>
+  : Promise<Game1>
   {
   const url: string= this.apiBaseUrl+"/games/"+gameId;
   return this.httpClient.get(url).toPromise()
-  .then(response => response as Game[])
+  .then(response => response as Game1)
   .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {

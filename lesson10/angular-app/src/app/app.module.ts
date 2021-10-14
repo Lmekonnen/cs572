@@ -31,7 +31,7 @@ import { GameOneComponent } from './game-one/game-one.component';
         component: GamesListComponent
       },
       {
-        path: "games/gameId",
+        path: "games/:gameId",
         component: GameOneComponent
       },
       {

@@ -33,6 +33,7 @@ export class GamesListComponent implements OnInit {
 }
 export class Game {
   title!: string;
+  _id!:string;
   price!: number;
   year!: number;
   }
