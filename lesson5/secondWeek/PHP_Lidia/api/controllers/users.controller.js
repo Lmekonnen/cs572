@@ -51,13 +51,13 @@ module.exports.addUser = function (req, res) {
                     res.status(500).json(err)
                 } else {
                     const newUser = {
-                        userName: req.body.userName,
+                        username: req.body.username,
                         password: hashPasswd,
                         name: req.body.name
                     }
                     
                     users.create(newUser, function (err, users) {
-                        console.log(newUser);
+                        console.log(err);
                         if (err) {
                             console.log("Error creating name");
                         }
