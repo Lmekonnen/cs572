@@ -1,0 +1,41 @@
+<!-- <form (ngSubmit)="onSubmit()"> -->
+    <form #registrationForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+        <label>
+            Name:
+            <!-- <input name="name" id="name" placeholder="Your Name" [(ngModel)]="user.name" ngModel> -->
+            <input name="name" id="name" placeholder="Your Name" ngModel required >
+            <!-- <span *ngIf="registrationForm.controls.name.invalid && (registrationForm.controls.name.dirty || registrationForm.controls.name.touched)">Please provide a name</span> -->
+            <span *ngIf="registrationForm.controls.name.invalid && (registrationForm.controls.name.dirty || registrationForm.controls.name.touched)">Please provide a name</span>
+        </label>
+    </div>
+    <div>
+        <label>
+            username:
+            <!-- <input name="username" id="username" placeholder="Your Name" [(ngModel)]="user.username" ngModel> -->
+            <input name="username" id="username" placeholder="Your Name" ngModel >
+            <!-- <span *ngIf="registrationForm.controls.username.invalid && (registrationForm.controls.username.dirty || registrationForm.controls.username.touched)">Please provide a name</span> -->
+            <span *ngIf="registrationForm.controls.username.invalid && (registrationForm.controls.username.dirty || registrationForm.controls.username.touched)">Please provide a name</span>
+        </label>
+    </div>
+    <div>
+        <label>
+          Password:
+            <!-- <input type="password" name="password" id="password" placeholder="Password" [(ngModel)]="user.password" ngModel> -->
+            <input type="password" name="password" id="password" placeholder="Password" ngModel>
+            <!-- <span *ngIf="registrationForm.controls.password.invalid && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)">Please provide a name</span> -->
+            <span *ngIf="registrationForm.controls.password.invalid && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)">Please provide a name</span>
+        </label>
+    </div>
+    <div>
+        <label>
+          Repeat Password:
+            <!-- <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" [(ngModel)]="user.passwordRepeat" ngModel> -->
+            <input type="password" name="passwordRepeat" id="passwordRepeat" placeholder="Repeat Password" ngModel>
+            <!-- <span *ngIf="registrationForm.controls.passwordRepeat.invalid && (registrationForm.controls.passwordRepeat.dirty || registrationForm.controls.passwordRepeat.touched)">Please provide a name</span> -->
+            <span *ngIf="registrationForm.controls.passwordRepeat.invalid && (registrationForm.controls.passwordRepeat.dirty || registrationForm.controls.passwordRepeat.touched)">Please provide a name</span>
+        </label>
+    </div>
+    <button type="button" [disabled]="registrationForm.invalid" (click)="onSubmit()">Register</button>
+    <button type="button" (click)="onClear()">Clear</button>
+</form>

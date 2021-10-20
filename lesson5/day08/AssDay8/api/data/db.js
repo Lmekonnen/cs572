@@ -2,6 +2,7 @@
 //we wanna know when are we connected
 const mongoose=require("mongoose")
 require("./games-model.js");
+require("./user-model")
 const dbName="newTestDB"
 const dburl="mongodb://localhost:27017/"+dbName
 mongoose.connect(dburl)
